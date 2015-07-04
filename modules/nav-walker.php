@@ -67,6 +67,10 @@ class NavWalker extends \Walker_Nav_Menu {
       }
     }
 
+    if ($args->walker->has_children) {
+      $classes[] = 'dropdown';
+    }
+
     $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
