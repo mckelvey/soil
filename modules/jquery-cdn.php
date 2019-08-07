@@ -12,15 +12,15 @@ function register_jquery() {
   if (!is_admin()) {
     $jquery_version = $GLOBALS['wp_scripts']->registered['jquery']->ver;
 
-    wp_deregister_script('jquery');
+//     wp_deregister_script('jquery');
 
-    wp_register_script(
-      'jquery',
-      'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js',
-      [],
-      null,
-      true
-    );
+//     wp_register_script(
+//       'jquery',
+//       'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js',
+//       [],
+//       null,
+//       true
+//     );
 
     add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
   }
